@@ -1,6 +1,6 @@
 import "../styles/style.scss";
 // import javascriptLogo from './javascript.svg'
-import { Logo } from "./components/logo/logo";
+import { Header } from "./components/header/header";
 
-const logo = new Logo(".logo");
-logo.createLogo();
+const header = new Header("#app");
+header.addHeader();
