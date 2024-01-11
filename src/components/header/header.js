@@ -3,7 +3,7 @@ export class Header {
     this.parent = document.querySelector(selector);
   }
 
-  createHeader() {
+  _createHeader() {
     const header = document.createElement("header");
     header.classList.add("header");
     header.textContent = "Test header";
@@ -12,7 +12,7 @@ export class Header {
   }
 
   addHeader() {
-    const header = this.createHeader();
+    const header = this._createHeader();
     this.parent.appendChild(header);
   }
 }
