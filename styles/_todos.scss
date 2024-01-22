@@ -1,0 +1,71 @@
+.todos {
+    &__container {
+        height: 100%;
+        width: 70%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+        align-items: center;
+
+        overflow-y: scroll;
+        scrollbar-width: 0;
+
+        &::-webkit-scrollbar { width: 0; }
+    }
+
+    &-item {
+        &__wrapper {
+            width: 100%;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        &__controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        &__check {
+            width: 30px;
+            height: 30px;
+            border: 1px solid $main-text-color;
+            border-radius: 6px;
+            transition: all .3s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $main-text-color;
+                background-image: url(../assets/images/check.svg);
+                background-repeat:no-repeat;
+                background-position: center center;
+            }
+        }
+
+        &__text {
+            font-family: "Mono SemiBold";
+            font-size: 24px;
+            color: $black-text-color;
+        }
+
+        &__edit, &__delete {
+            width: 22px;
+            height: 22px;
+            stroke: $controls-color;
+            transition: all .3s;
+
+            &:hover {
+                cursor: pointer;
+                stroke: $main-text-color;
+            }
+        }
+    }
+}
+
