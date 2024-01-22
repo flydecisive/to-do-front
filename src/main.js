@@ -6,6 +6,8 @@ import { getTodos, addTodo } from "./api/api";
 const header = new Header("#app");
 header.addHeader();
 
-getTodos();
-addTodo("задача 1", "описание");
-// getTodos();
+document.addEventListener("DOMContentLoaded", () => {
+  getTodos().then((responseData) => {
+    console.log(responseData);
+  });
+});
