@@ -2,6 +2,7 @@ import "../styles/style.scss";
 import { Header } from "./components/header/header";
 import { SearchSection } from "./components/search_section/search_section";
 import { Todos } from "./components/todos/todos";
+import { AddButton } from "./components/add_button/add_button";
 import { getTodos, addTodo } from "./api/api";
 
 const header = new Header("#app");
@@ -11,6 +12,8 @@ const todos = new Todos("#app", ["Тест", "Тест 2"]);
 header.addHeader();
 searchSection.addSearchSection();
 todos.addTodos();
+const addButton = new AddButton(".todos__container");
+addButton.addButton();
 
 document.addEventListener("DOMContentLoaded", () => {
   getTodos().then((responseData) => {

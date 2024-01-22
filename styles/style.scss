@@ -3,6 +3,7 @@
 @import 'header';
 @import 'search';
 @import 'todos';
+@import 'buttons';
 
 * {
   margin: 0;
@@ -10,13 +11,14 @@
 }
 
 #app {
-  max-height: 100vh;
+  height: 100vh;
   width: 100vw;
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .center {

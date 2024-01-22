@@ -4,7 +4,8 @@ export class Todos {
     this.items = items;
   }
 
-  _createTodoItemTemplate(el) {
+  _createTodoItemTemplate(el, isHr) {
+    console.log(isHr);
     return `
         <div class="todos-item__wrapper">
           <div class="todos-item__content">
@@ -53,15 +54,16 @@ export class Todos {
             </svg>
           </div>
       </div>
+      ${isHr ? "<hr class='todos-item__line'/>" : ""}
     `;
   }
 
   _createTodoItems() {
-    const todosArr = this.items?.map((el) => {
-      return this._createTodoItemTemplate(el);
+    const todosArr = this.items?.map((el, index) => {
+      return this._createTodoItemTemplate(el, index < this.items?.length - 1);
     });
 
-    return todosArr;
+    return todosArr.join("");
   }
 
   _createToDoContainer() {
