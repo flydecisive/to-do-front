@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'header';
+@import 'search';
 
 * {
   margin: 0;
@@ -11,6 +12,9 @@
   max-height: 100vh;
   width: 100vw;
   box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
 }
 
 .center {
