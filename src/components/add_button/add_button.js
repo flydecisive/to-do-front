@@ -12,15 +12,15 @@ export class AddButton {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         class="add-button__icon"
-      >
-        <path
-          d="M4 12H20M12 4V20"
-          stroke="current"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+        >
+            <path
+            d="M4 12H20M12 4V20"
+            stroke="current"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            />
+        </svg>
     `;
   }
 
