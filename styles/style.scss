@@ -43,3 +43,21 @@
     stroke: $light-text-color;
   }
 }
+
+.not-todos-found {
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  &__text {
+    font-family: "Mono Medium";
+    color: $black-text-color;
+    font-size: 20px;
+  }
+}

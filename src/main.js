@@ -7,16 +7,16 @@ import { getTodos, addTodo } from "./api/api";
 
 const header = new Header("#app");
 const searchSection = new SearchSection("#app");
-const todos = new Todos("#app", ["Тест", "Тест 2"]);
+const todos = new Todos("#app");
 
 header.addHeader();
 searchSection.addSearchSection();
-todos.addTodos();
+todos.createToDoContainer();
 const addButton = new AddButton(".todos__container");
 addButton.addButton();
 
 document.addEventListener("DOMContentLoaded", () => {
   getTodos().then((responseData) => {
-    console.log(responseData);
+    todos.addTodos(responseData);
   });
 });

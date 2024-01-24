@@ -1,11 +1,12 @@
+import { NotTodosFound } from "../not_todos_found/not_todos_found";
+const notTodosFound = new NotTodosFound();
+
 export class Todos {
-  constructor(selector, items) {
+  constructor(selector) {
     this.parent = document.querySelector(selector);
-    this.items = items;
   }
 
   _createTodoItemTemplate(el, isHr) {
-    console.log(isHr);
     return `
         <div class="todos-item__wrapper">
           <div class="todos-item__content">
@@ -58,24 +59,27 @@ export class Todos {
     `;
   }
 
-  _createTodoItems() {
-    const todosArr = this.items?.map((el, index) => {
+  _createTodoItems(items) {
+    const todosArr = items.map((el, index) => {
       return this._createTodoItemTemplate(el, index < this.items?.length - 1);
     });
 
     return todosArr.join("");
   }
 
-  _createToDoContainer() {
+  createToDoContainer() {
     const toDoContainer = document.createElement("div");
     toDoContainer.classList.add("todos__container");
-    toDoContainer.innerHTML = this._createTodoItems();
+    this.parent.appendChild(toDoContainer);
 
-    return toDoContainer;
+    this.toDoContainer = toDoContainer;
   }
 
-  addTodos() {
-    const toDoContainer = this._createToDoContainer();
-    this.parent.appendChild(toDoContainer);
+  addTodos(items = []) {
+    if (this._createTodoItems(items) === "") {
+      this.toDoContainer.appendChild(notTodosFound.createNotTodosFound());
+    } else {
+      this.toDoContainer.innerHTML = this._createTodoItems(items);
+    }
   }
 }
