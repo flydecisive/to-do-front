@@ -28,11 +28,19 @@ export class AddButton {
     const addButton = document.createElement("div");
     addButton.classList.add("add-button");
     addButton.innerHTML = this._createAddButtonTemplate();
+    this.addButton = addButton;
 
     return addButton;
   }
 
   addButton() {
     this.parent.appendChild(this._createAddButton());
+  }
+
+  handleClick(modal) {
+    this.addButton.addEventListener("click", () => {
+      modal.showModal();
+      modal.classList.remove("hide");
+    });
   }
 }

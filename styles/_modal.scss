@@ -1,0 +1,102 @@
+.add-todo-modal {
+    width: 500px;
+    border-radius: 16px;
+    border: none;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: $modal-background;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.hide {
+        display: none;
+        animation: hide .5s;
+    }
+
+    &[open] {
+        animation: show .3s;
+    }
+
+    &__header {
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-family: "Mono Medium";
+        font-size: 24px;
+        color: $black-text-color;
+    }
+
+    &__input {
+        width: 100%;
+        border-radius: 5px;
+        font-family: "Mono Regular";
+        font-size: 16px;
+        color: $black-text-color;
+        box-sizing: border-box;
+        padding: 6px 16px;
+        border-color: $main-text-color;
+        margin-bottom: 80px;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $light-text-color;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $main-text-color;
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        font-size: 16px;
+        font-family: "Mono Medium";
+        box-sizing: border-box;
+        padding: 10px 22px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        transition: all .3s;
+
+        &-cancel {
+            border: 1px solid $main-text-color;
+            color: $main-text-color;
+            background-color: transparent;
+        }
+
+        &-apply {
+            border: none;
+            background-color: $main-text-color;
+            color: #fff;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    to {
+        opacity: 0;
+    }
+}

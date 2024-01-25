@@ -4,6 +4,7 @@
 @import 'search';
 @import 'todos';
 @import 'buttons';
+@import 'modal';
 
 * {
   margin: 0;
@@ -19,6 +20,7 @@
   align-items: center;
   gap: 20px;
   position: relative;
+  background-color: $modal-background;
 }
 
 .center {
