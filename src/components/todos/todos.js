@@ -2,16 +2,12 @@ import { NotTodosFound } from "../not_todos_found/not_todos_found";
 const notTodosFound = new NotTodosFound();
 
 export class Todos {
-  constructor(selector) {
-    this.parent = document.querySelector(selector);
-  }
-
   _createTodoItemTemplate(el, isHr) {
     return `
         <div class="todos-item__wrapper">
           <div class="todos-item__content">
             <div class="todos-item__check"></div>
-            <p class="todos-item__text">${el}</p>
+            <p class="todos-item__text">${el.task}</p>
           </div>
           <div class="todos-item__controls">
             <svg
@@ -67,7 +63,8 @@ export class Todos {
     return todosArr.join("");
   }
 
-  createToDoContainer() {
+  createToDoContainer(selector) {
+    this.parent = document.querySelector(selector);
     const toDoContainer = document.createElement("div");
     toDoContainer.classList.add("todos__container");
     this.parent.appendChild(toDoContainer);
@@ -77,7 +74,7 @@ export class Todos {
 
   addTodos(items = []) {
     if (this._createTodoItems(items) === "") {
-      this.toDoContainer.appendChild(notTodosFound.createNotTodosFound());
+      notTodosFound.createNotTodosFound(this.toDoContainer);
     } else {
       this.toDoContainer.innerHTML = this._createTodoItems(items);
     }

@@ -1,8 +1,4 @@
 export class AddButton {
-  constructor(selector) {
-    this.parent = document.querySelector(selector);
-  }
-
   _createAddButtonTemplate() {
     return `
         <svg
@@ -33,7 +29,8 @@ export class AddButton {
     return addButton;
   }
 
-  addButton() {
+  addButton(selector) {
+    this.parent = document.querySelector(selector);
     this.parent.appendChild(this._createAddButton());
   }
 

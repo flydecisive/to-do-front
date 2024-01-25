@@ -6,37 +6,48 @@ import { AddButton } from "./components/add_button/add_button";
 import { getTodos, addTodo } from "./api/api";
 import { AddTodoModal } from "./components/add_todo_modal/add_todo_modal";
 import { Loader } from "./components/loader/loader";
+import { MainContainer } from "./components/main_container/main_container";
 
 const header = new Header("#app");
 const searchSection = new SearchSection("#app");
-const todos = new Todos("#app");
 const addTodoModal = new AddTodoModal("#app");
+const mainContainer = new MainContainer("#app");
+const loader = new Loader();
+const todos = new Todos();
+const addButton = new AddButton();
 
 header.addHeader();
 searchSection.addSearchSection();
-todos.createToDoContainer();
+mainContainer.createMainContainer();
+todos.createToDoContainer(".main__container");
 addTodoModal.createAddTodoModal();
-const addButton = new AddButton(".todos__container");
-addButton.addButton();
-const loader = new Loader(".todos__container");
-loader.createLoader();
+addButton.addButton(".main__container");
+loader.createLoader(".todos__container");
 addButton.handleClick(document.querySelector(".add-todo-modal"));
 addTodoModal.handleCancelButton(
   document.querySelector(".add-todo-modal__button-cancel")
 );
 addTodoModal.handleModalClick();
+addTodoModal.handleModalInput();
+addTodoModal.handleApplyButton(
+  document.querySelector(".add-todo-modal__button-apply"),
+  addNewTodo
+);
 
 document.addEventListener("DOMContentLoaded", () => {
-  loader.showLoader();
   requestTodos();
 });
 
-const requestTodos = () => {
-  getTodos()
-    .then((responseData) => {
-      todos.addTodos(responseData);
-    })
-    .finally(() => {
-      loader.hideLoader();
-    });
-};
+function requestTodos() {
+  loader.showLoader();
+  getTodos().then((responseData) => {
+    todos.addTodos(responseData);
+  });
+}
+
+function addNewTodo(title, task) {
+  loader.showLoader();
+  addTodo(title, task).then((responseData) => {
+    todos.addTodos(responseData);
+  });
+}

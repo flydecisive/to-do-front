@@ -51,4 +51,21 @@ export class AddTodoModal {
       }
     });
   }
+
+  handleModalInput(callback) {
+    const input = this.addTodoModal.querySelector(".add-todo-modal__input");
+
+    input.addEventListener("input", (e) => {
+      this.inputValue = e.target.value;
+    });
+  }
+
+  handleApplyButton(button, callback) {
+    button.addEventListener("click", () => {
+      console.log(this.inputValue);
+      callback("", this.inputValue);
+      this.addTodoModal.close();
+      this.addTodoModal.classList.add("hide");
+    });
+  }
 }

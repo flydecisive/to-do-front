@@ -1,21 +1,19 @@
 export class Loader {
-  constructor(selector) {
+  createLoader(selector) {
     this.parent = document.querySelector(selector);
-  }
-
-  createLoader() {
-    const loader = document.createElement("div");
-    loader.classList.add("spinner");
-    loader.classList.add("hide");
+    const loader = `
+      <div class="spinner"></div>
+    `;
     this.loader = loader;
-    this.parent.appendChild(loader);
+    // this.parent.appendChild(loader);
   }
 
   showLoader() {
-    this.loader.classList.remove("hide");
+    this.parent.innerHTML = this.loader;
+    // this.loader.classList.remove("hide");
   }
 
   hideLoader() {
-    this.loader.classList.add("hide");
+    this.parent.innerHTML = "";
   }
 }
