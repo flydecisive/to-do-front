@@ -24,6 +24,7 @@ addButton.handleClick(document.querySelector(".add-todo-modal"));
 addTodoModal.handleCancelButton(
   document.querySelector(".add-todo-modal__button-cancel")
 );
+addTodoModal.handleModalClick();
 
 document.addEventListener("DOMContentLoaded", () => {
   loader.showLoader();

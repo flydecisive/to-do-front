@@ -36,4 +36,19 @@ export class AddTodoModal {
       this.addTodoModal.classList.add("hide");
     });
   }
+
+  handleModalClick() {
+    this.addTodoModal.addEventListener("click", (event) => {
+      const modalRect = this.addTodoModal.getBoundingClientRect();
+      if (
+        event.clientX < modalRect.left ||
+        event.clientX > modalRect.right ||
+        event.clientY < modalRect.top ||
+        event.clientY > modalRect.bottom
+      ) {
+        this.addTodoModal.close();
+        this.addTodoModal.classList.add("hide");
+      }
+    });
+  }
 }
