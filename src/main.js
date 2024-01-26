@@ -7,6 +7,7 @@ import { getTodos, addTodo } from "./api/api";
 import { AddTodoModal } from "./components/add_todo_modal/add_todo_modal";
 import { Loader } from "./components/loader/loader";
 import { MainContainer } from "./components/main_container/main_container";
+import { Filter } from "./components/filter/filter";
 
 const header = new Header("#app");
 const searchSection = new SearchSection("#app");
@@ -15,9 +16,16 @@ const mainContainer = new MainContainer("#app");
 const loader = new Loader();
 const todos = new Todos();
 const addButton = new AddButton();
+const filter = new Filter();
 
 header.addHeader();
 searchSection.addSearchSection();
+filter.createFilter(".search-section");
+filter.handleFilterButton(
+  document.querySelector(".filter__button"),
+  ".filter__list"
+);
+filter.handleFilterItem();
 mainContainer.createMainContainer();
 todos.createToDoContainer(".main__container");
 addTodoModal.createAddTodoModal();
@@ -29,7 +37,6 @@ addTodoModal.handleCancelButton(
 );
 addTodoModal.handleModalClick();
 addTodoModal.handleModalInputTask();
-// addTodoModal.handleModalInputTags();
 addTodoModal.handleApplyButton(
   document.querySelector(".add-todo-modal__button-apply"),
   addNewTodo
@@ -42,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function requestTodos() {
   loader.showLoader();
   getTodos().then((responseData) => {
-    console.log(responseData);
     todos.addTodos(responseData);
   });
 }
