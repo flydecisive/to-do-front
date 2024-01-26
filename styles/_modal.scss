@@ -29,6 +29,14 @@
         color: $black-text-color;
     }
 
+    &__inputs {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 15px;
+        margin-bottom: 80px;
+    }
+
     &__input {
         width: 100%;
         border-radius: 5px;
@@ -38,7 +46,6 @@
         box-sizing: border-box;
         padding: 6px 16px;
         border-color: $main-text-color;
-        margin-bottom: 80px;
         background-color: transparent;
 
         &::placeholder {

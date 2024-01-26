@@ -28,7 +28,8 @@ addTodoModal.handleCancelButton(
   document.querySelector(".add-todo-modal__button-cancel")
 );
 addTodoModal.handleModalClick();
-addTodoModal.handleModalInput();
+addTodoModal.handleModalInputTask();
+// addTodoModal.handleModalInputTags();
 addTodoModal.handleApplyButton(
   document.querySelector(".add-todo-modal__button-apply"),
   addNewTodo
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function requestTodos() {
   loader.showLoader();
   getTodos().then((responseData) => {
+    console.log(responseData);
     todos.addTodos(responseData);
   });
 }
@@ -48,6 +50,7 @@ function requestTodos() {
 function addNewTodo(title, task) {
   loader.showLoader();
   addTodo(title, task).then((responseData) => {
+    console.log(responseData);
     todos.addTodos(responseData);
   });
 }

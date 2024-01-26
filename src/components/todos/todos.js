@@ -2,12 +2,32 @@ import { NotTodosFound } from "../not_todos_found/not_todos_found";
 const notTodosFound = new NotTodosFound();
 
 export class Todos {
+  _createTodoTagTempalte(tag) {
+    return `
+      <div class='todos-item__tag'>${tag}</div>
+    `;
+  }
+
   _createTodoItemTemplate(el, isHr) {
     return `
-        <div class="todos-item__wrapper">
+        <div class="todos-item__wrapper" data-id=${el.id}>
           <div class="todos-item__content">
             <div class="todos-item__check"></div>
-            <p class="todos-item__text">${el.task}</p>
+            <div class="todos-item__description">
+              <p class="todos-item__text">${el.task}</p>
+              <div class="todos-item__tags">
+                ${
+                  el.tags
+                    ? el.tags
+                        .map((el) => {
+                          return this._createTodoTagTempalte(el);
+                        })
+                        .join("")
+                    : ""
+                }
+              </div>
+            </div>
+            
           </div>
           <div class="todos-item__controls">
             <svg
@@ -57,7 +77,7 @@ export class Todos {
 
   _createTodoItems(items) {
     const todosArr = items.map((el, index) => {
-      return this._createTodoItemTemplate(el, index < this.items?.length - 1);
+      return this._createTodoItemTemplate(el, index < items?.length - 1);
     });
 
     return todosArr.join("");

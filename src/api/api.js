@@ -8,8 +8,9 @@ export const getTodos = async () => {
   });
 };
 
-export const addTodo = async (title, task) => {
-  return await axios.post(API_PATH, { title, task }).then((response) => {
+export const addTodo = async (data) => {
+  const { task, tags } = data;
+  return await axios.post(API_PATH, { task, tags }).then((response) => {
     return response.data;
   });
 };
