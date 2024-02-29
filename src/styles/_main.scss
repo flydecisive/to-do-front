@@ -1,0 +1,88 @@
+.main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 78px 0px 78px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 86px;
+}
+
+.hero {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px 60px;
+    position: relative;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 16px;
+    }
+
+    &__title, &__text {
+        color: $base-black;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 44px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__image {
+        position: absolute;
+        right: 8px;
+        bottom: -50px;
+    }
+}
+
+.tasks {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    gap: 24px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_wrapper {
+            width: 62.5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 28px;
+        color: $base-black;
+    }
+
+    &__button {
+        border: none;
+        background-color: transparent;
+        font-weight: 500;
+        font-size: 16px;
+        color: $base-darkorange;
+        height: fit-content;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__date {
+        font-weight: 400;
+        font-size: 16px;
+        color: $base-black;
+    }
+}

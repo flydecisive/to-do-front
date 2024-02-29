@@ -6,7 +6,7 @@
     <title>To do</title>
   </head>
   <body>
-    <div id="app">
+    <div class="app">
       <section class="sidebar">
         <div class="logo">
           <p class="logo__content">To-Do App</p>
@@ -25,13 +25,42 @@
           </ul>
         </div>
       </section>
-      <header class="header">
-        <h2 class="header__title">Доска</h2>
-        <button class="button button-auth">
-          Выйти <img class="button__img" src="auth.svg" alt="auth" />
-        </button>
-      </header>
-      <main class="main"></main>
+      <section>
+        <header class="header">
+          <h2 class="header__title">Доска</h2>
+          <button class="button button-auth">
+            Выйти <img class="button__img" src="auth.svg" alt="auth" />
+          </button>
+        </header>
+
+        <main class="main">
+          <div class="hero">
+            <div class="hero__content">
+              <h2 class="hero__title">Привет, пользователь!</h2>
+              <p class="hero__text">Чем ты хочешь заняться сегодня?</p>
+            </div>
+            <img class="hero__image" src="user-man.png" alt="user" />
+          </div>
+
+          <div class="tasks">
+            <div class="tasks__header">
+              <div class="tasks__header_wrapper">
+                <h3 class="tasts__title">Cегодняшние задачи</h3>
+                <button class="tasks__button tasks__button-delete_all">
+                  Удалить все
+                </button>
+              </div>
+              <p class="tasks__date">Monday, 18 December 2023</p>
+            </div>
+            <div class="tasks__content">
+              <div class="tasks__container"></div>
+              <div class="tasks__info"></div>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <div class="overlay"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -2,6 +2,7 @@
 @import 'vars';
 @import 'header';
 @import 'sidebar';
+@import 'main';
 
 * {
     padding: 0;
@@ -12,7 +13,7 @@ body {
     font-family: $font-main;
 }
 
-#app {
+.app {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -21,7 +22,7 @@ body {
     align-items: start;
     box-sizing: border-box;
     padding-bottom: 50px;
-    overflow-y: hidden;
+    position: relative;
 }
 
 .logo {
@@ -66,7 +67,7 @@ body {
         border-radius: 12px;
         padding: 16px 28px;
         color: $base-black;
-        box-shadow: $box-shadow;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
         background: $base-white;
 
         &__content {
@@ -79,4 +80,16 @@ body {
             justify-content: center;
         }
     }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 50%);
+    backdrop-filter: blur(5px);
+    z-index: 10;
 }
