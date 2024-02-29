@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do</title>
+  </head>
+  <body>
+    <div id="app">
+      <section class="sidebar">
+        <div class="logo">
+          <p class="logo__content">To-Do App</p>
+        </div>
+        <div class="sidebar__content">
+          <button class="button button-add">
+            Добавить задачу
+            <div class="button-add__content">
+              <img src="plus.svg" alt="plus" />
+            </div>
+          </button>
+          <ul class="nav">
+            <li class="nav__item nav__item-active">Доска</li>
+            <li class="nav__item">Активные</li>
+            <li class="nav__item">Завершенные</li>
+          </ul>
+        </div>
+      </section>
+      <header class="header">
+        <h2 class="header__title">Доска</h2>
+        <button class="button button-auth">
+          Выйти <img class="button__img" src="auth.svg" alt="auth" />
+        </button>
+      </header>
+      <main class="main"></main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

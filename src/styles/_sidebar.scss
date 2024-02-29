@@ -1,0 +1,42 @@
+.sidebar {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 60px;
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 80px;
+    }
+}
+
+.nav {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 32px;
+
+    &__item {
+        width: 100%;
+        padding: 12px 0px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        color: $base-black;
+        box-sizing: border-box;
+
+        &-active {
+            background-color: $base-orange;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
