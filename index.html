@@ -25,40 +25,138 @@
           </ul>
         </div>
       </section>
-      <section>
-        <header class="header">
-          <h2 class="header__title">Доска</h2>
+
+      <header class="header">
+        <div class="logo logo-mobile">
+          <p class="logo__content">To-Do App</p>
+        </div>
+        <h2 class="header__title">Доска</h2>
+        <div class="header__buttons">
           <button class="button button-auth">
             Выйти <img class="button__img" src="auth.svg" alt="auth" />
           </button>
-        </header>
+        </div>
+      </header>
 
-        <main class="main">
-          <div class="hero">
-            <div class="hero__content">
-              <h2 class="hero__title">Привет, пользователь!</h2>
-              <p class="hero__text">Чем ты хочешь заняться сегодня?</p>
-            </div>
-            <img class="hero__image" src="user-man.png" alt="user" />
+      <main class="main">
+        <div class="hero">
+          <div class="hero__content">
+            <h2 class="hero__title">Привет, пользователь!</h2>
+            <p class="hero__text">Чем ты хочешь заняться сегодня?</p>
           </div>
+          <img class="hero__image" src="user-man.png" alt="user" />
+        </div>
 
-          <div class="tasks">
-            <div class="tasks__header">
-              <div class="tasks__header_wrapper">
-                <h3 class="tasts__title">Cегодняшние задачи</h3>
-                <button class="tasks__button tasks__button-delete_all">
-                  Удалить все
-                </button>
+        <div class="tasks">
+          <div class="tasks__header">
+            <div class="tasks__header_wrapper">
+              <h3 class="tasts__title">Cегодняшние задачи</h3>
+              <button class="tasks__button tasks__button-delete_all">
+                Удалить все
+              </button>
+            </div>
+            <p class="tasks__date">Monday, 18 December 2023</p>
+          </div>
+          <div class="tasks__container">
+            <div class="task">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="task__checkbox"
+              >
+                <path
+                  d="M12.3667 18.9L20.5917 10.675L18.9583 9.04167L12.3667 15.6333L9.04167 12.3083L7.40833 13.9417L12.3667 18.9ZM5.83333 24.5C5.19167 24.5 4.64256 24.2717 4.186 23.8152C3.72944 23.3586 3.50078 22.8091 3.5 22.1667V5.83333C3.5 5.19167 3.72867 4.64256 4.186 4.186C4.64333 3.72944 5.19244 3.50078 5.83333 3.5H22.1667C22.8083 3.5 23.3578 3.72867 23.8152 4.186C24.2725 4.64333 24.5008 5.19244 24.5 5.83333V22.1667C24.5 22.8083 24.2717 23.3578 23.8152 23.8152C23.3586 24.2725 22.8091 24.5008 22.1667 24.5H5.83333ZM5.83333 22.1667H22.1667V5.83333H5.83333V22.1667Z"
+                  fill="#EDB046"
+                />
+              </svg>
+              <p class="task__content">Pick up the kids</p>
+            </div>
+            <div class="task">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="task__checkbox"
+              >
+                <path
+                  d="M12.3667 18.9L20.5917 10.675L18.9583 9.04167L12.3667 15.6333L9.04167 12.3083L7.40833 13.9417L12.3667 18.9ZM5.83333 24.5C5.19167 24.5 4.64256 24.2717 4.186 23.8152C3.72944 23.3586 3.50078 22.8091 3.5 22.1667V5.83333C3.5 5.19167 3.72867 4.64256 4.186 4.186C4.64333 3.72944 5.19244 3.50078 5.83333 3.5H22.1667C22.8083 3.5 23.3578 3.72867 23.8152 4.186C24.2725 4.64333 24.5008 5.19244 24.5 5.83333V22.1667C24.5 22.8083 24.2717 23.3578 23.8152 23.8152C23.3586 24.2725 22.8091 24.5008 22.1667 24.5H5.83333ZM5.83333 22.1667H22.1667V5.83333H5.83333V22.1667Z"
+                  fill="#EDB046"
+                />
+              </svg>
+              <p class="task__content">Pick up the kids</p>
+            </div>
+            <div class="task">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="task__checkbox"
+              >
+                <path
+                  d="M12.3667 18.9L20.5917 10.675L18.9583 9.04167L12.3667 15.6333L9.04167 12.3083L7.40833 13.9417L12.3667 18.9ZM5.83333 24.5C5.19167 24.5 4.64256 24.2717 4.186 23.8152C3.72944 23.3586 3.50078 22.8091 3.5 22.1667V5.83333C3.5 5.19167 3.72867 4.64256 4.186 4.186C4.64333 3.72944 5.19244 3.50078 5.83333 3.5H22.1667C22.8083 3.5 23.3578 3.72867 23.8152 4.186C24.2725 4.64333 24.5008 5.19244 24.5 5.83333V22.1667C24.5 22.8083 24.2717 23.3578 23.8152 23.8152C23.3586 24.2725 22.8091 24.5008 22.1667 24.5H5.83333ZM5.83333 22.1667H22.1667V5.83333H5.83333V22.1667Z"
+                  fill="#EDB046"
+                />
+              </svg>
+              <p class="task__content">Pick up the kids</p>
+            </div>
+            <div class="task">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="task__checkbox"
+              >
+                <path
+                  d="M12.3667 18.9L20.5917 10.675L18.9583 9.04167L12.3667 15.6333L9.04167 12.3083L7.40833 13.9417L12.3667 18.9ZM5.83333 24.5C5.19167 24.5 4.64256 24.2717 4.186 23.8152C3.72944 23.3586 3.50078 22.8091 3.5 22.1667V5.83333C3.5 5.19167 3.72867 4.64256 4.186 4.186C4.64333 3.72944 5.19244 3.50078 5.83333 3.5H22.1667C22.8083 3.5 23.3578 3.72867 23.8152 4.186C24.2725 4.64333 24.5008 5.19244 24.5 5.83333V22.1667C24.5 22.8083 24.2717 23.3578 23.8152 23.8152C23.3586 24.2725 22.8091 24.5008 22.1667 24.5H5.83333ZM5.83333 22.1667H22.1667V5.83333H5.83333V22.1667Z"
+                  fill="#EDB046"
+                />
+              </svg>
+              <p class="task__content">Pick up the kids</p>
+            </div>
+            <div class="task">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="task__checkbox"
+              >
+                <path
+                  d="M12.3667 18.9L20.5917 10.675L18.9583 9.04167L12.3667 15.6333L9.04167 12.3083L7.40833 13.9417L12.3667 18.9ZM5.83333 24.5C5.19167 24.5 4.64256 24.2717 4.186 23.8152C3.72944 23.3586 3.50078 22.8091 3.5 22.1667V5.83333C3.5 5.19167 3.72867 4.64256 4.186 4.186C4.64333 3.72944 5.19244 3.50078 5.83333 3.5H22.1667C22.8083 3.5 23.3578 3.72867 23.8152 4.186C24.2725 4.64333 24.5008 5.19244 24.5 5.83333V22.1667C24.5 22.8083 24.2717 23.3578 23.8152 23.8152C23.3586 24.2725 22.8091 24.5008 22.1667 24.5H5.83333ZM5.83333 22.1667H22.1667V5.83333H5.83333V22.1667Z"
+                  fill="#EDB046"
+                />
+              </svg>
+              <p class="task__content">Pick up the kids</p>
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="statistic__item statistic__item-completed">
+              <img class="statistic__img" src="completed.svg" alt="completed" />
+              <div class="statistic__content">
+                <h3 class="statistic__title">40%</h3>
+                <p class="statistic__text">Завершенные</p>
               </div>
-              <p class="tasks__date">Monday, 18 December 2023</p>
             </div>
-            <div class="tasks__content">
-              <div class="tasks__container"></div>
-              <div class="tasks__info"></div>
+            <div class="statistic__item statistic__item-active">
+              <img class="statistic__img" src="active.svg" alt="active" />
+              <div class="statistic__content">
+                <h3 class="statistic__title">60%</h3>
+                <p class="statistic__text">Активные</p>
+              </div>
             </div>
           </div>
-        </main>
-      </section>
+        </div>
+      </main>
 
       <div class="overlay"></div>
     </div>

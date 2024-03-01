@@ -12,3 +12,19 @@
         font-size: 28px;
     }
 }
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .header {
+        display: grid;
+        grid-template-areas: 'logo buttons';
+
+        &__title {
+            display: none;
+        }
+
+        &__buttons{
+            grid-area: buttons;
+            display: flex;
+        }
+    }
+}
