@@ -152,6 +152,33 @@
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
+    .main {
+        padding: 20px 32px 0px 32px;
+        gap: 41px;
+    }
+
+    .hero {
+        padding: 40px 16px;
+
+        &__content {
+            gap: 4px;
+        }
+
+        &__title {
+            font-size: 14px;
+        }
+
+        &__text {
+            font-size: 8px;
+        }
+
+        &__image {
+            width: 141px;
+            height: 131px;
+            bottom: -29px;
+        }
+    }
+
     .tasks {
         grid-template-areas: 
         'tasks_info'
@@ -159,5 +186,76 @@
         'tasks_container'
         ;
         grid-template-columns: 1fr;
+        row-gap: 24px;
+
+        &__header {
+            gap: 8px;
+
+            &_wrapper {
+                width: 70%;
+            }
+        }
+    
+        &__title {
+            font-size: 12px;
+        }
+    
+        &__button {
+            font-size: 6px;
+        }
+    
+        &__date {
+            font-size: 6px;
+            width: fit-content;
+        }
+    
+        &__container {
+            grid-area: tasks_container;
+            gap: 14px;
+        }
+    }
+
+    .statistic {
+        grid-area: tasks_info;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: unset;
+    
+        &__item {
+            padding: 10px 16px;
+            flex-flow: row nowrap;
+            gap: 19px;
+            width: 140px;
+        }
+
+        &__img {
+            width: 24px;
+            height: 24px;
+        }
+    
+        &__content {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            gap: 2px;
+        }
+    
+        &__title, &__text {
+            color: $base-white;
+        }
+    
+        &__title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    
+        &__text {
+            font-weight: 400;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: left;
+        }
     }
 }

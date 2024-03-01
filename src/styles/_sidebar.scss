@@ -5,6 +5,7 @@
     flex-flow: column nowrap;
     align-items: center;
     gap: 60px;
+    box-sizing: border-box;
 
     &__content {
         width: 100%;
@@ -39,5 +40,12 @@
         &:hover {
             cursor: pointer;
         }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .sidebar {
+        width: 100%;
+        padding: 0px 32px;
     }
 }
