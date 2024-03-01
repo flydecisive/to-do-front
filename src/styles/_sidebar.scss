@@ -43,9 +43,33 @@
     }
 }
 
+.selector {
+    display: none;
+}
+
 @media (min-width: 320px) and (max-width: 425px) {
     .sidebar {
         width: 100%;
-        padding: 0px 32px;
+        padding: 16px 32px 0px 32px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .selector {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        padding: 6px 16px;
+        box-sizing: border-box;
+        background-color: $base-orange;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        color: $base-black;
     }
 }
