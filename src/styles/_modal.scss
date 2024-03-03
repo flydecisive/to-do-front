@@ -1,0 +1,61 @@
+.modal {
+    display: none;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.15);
+    background: $base-white;
+    position: absolute;
+    z-index: 20;
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding: 44px 48px;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    gap: 36px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 800px;
+
+    &__form {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 24px;
+        width: 100%;
+    }
+
+    &__textfield {
+        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+        background: $base-white;
+        border-radius: 12px;
+        padding: 16px 24px;
+        box-sizing: border-box;
+        font-weight: 400;
+        color: $base-black;
+        border: none;
+        transition: all .3s;
+
+        &::placeholder {
+            color: $base-gray;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $base-orange;
+        }
+
+        &-title {
+            font-size: 28px;
+        }
+
+        &-description {
+            font-size: 20px;
+            resize: none;
+            overflow: hidden;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+    }
+}
