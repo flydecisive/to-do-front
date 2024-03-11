@@ -1,36 +1,63 @@
 import "./styles/style.scss";
 import { addTodo, getTodos } from "./api";
+import addTodoModal from "./addTodoModal";
 
-export let tasks: any = [];
-const tasksContainer = document.querySelector(".tasks__container");
+export class App {
+  _todos: {}[];
+  observers: any;
+  tasksContainer: HTMLDivElement | null;
 
-const createTask = (title: string, id: number) => {
-  return `
-    <div class="task">
-        <div class="checkbox">
-            <input type="checkbox" value="None" id="${id}" />
-            <label for="${id}"></label>
+  constructor() {
+    this._todos = [];
+    this.observers = [];
+    this.tasksContainer = document.querySelector(".tasks__container");
+  }
+
+  createTask(title: string, id: number) {
+    return `
+        <div class="task">
+            <div class="checkbox">
+                <input type="checkbox" value="None" id="${id}" />
+                <label for="${id}"></label>
+            </div>
+            <p class="task__content">${title}</p>
         </div>
-        <p class="task__content">${title}</p>
-    </div>
-`;
-};
-
-const createMessage = (message: string) => {
-  return `
-        <p class="message-info">${message}</p>
     `;
-};
+  }
 
-tasks = await getTodos();
+  set setTodos(value: any) {
+    this._todos = value;
+  }
 
-if (tasksContainer !== null) {
-  tasksContainer.innerHTML = tasks
-    .map((task: any) => {
-      return createTask(task.title, task.id);
-    })
-    .join("");
+  async getAllTodos() {
+    this._todos = await getTodos();
+  }
+
+  render() {
+    if (this.tasksContainer !== null) {
+      this.tasksContainer.innerHTML = this._todos
+        .map((task: any) => {
+          return this.createTask(task.title, task.id);
+        })
+        .join("");
+    }
+  }
 }
 
-// if (tasks.length === 0) {
-// }
+const app = new App();
+const addModal = new addTodoModal();
+
+app.getAllTodos().then(() => {
+  app.render();
+});
+
+addModal.initAddButtonListener();
+addModal.initTitleElemListener();
+addModal.initDescriptionELemListener();
+addModal.initSubmitButtonListener();
+
+// const createMessage = (message: string) => {
+//   return `
+//         <p class="message-info">${message}</p>
+//     `;
+// };

@@ -1,5 +1,5 @@
 .modal {
-    display: none;
+    display: flex;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.15);
     background: $base-white;
     position: absolute;
@@ -10,9 +10,9 @@
     flex-flow: column nowrap;
     align-items: flex-end;
     gap: 36px;
-    top: 25%;
+    top: 200px;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translateX(-50%);
     width: 800px;
 
     &__form {
