@@ -2,6 +2,7 @@ import { addTodo } from "./api";
 import { App } from "./main";
 
 export default class addTodoModal {
+  textFieldsRegex = /^[A-Za-z0-9А-Яа-я '".,!?-]$/;
   _title = "";
   _description = "";
   modal: HTMLDivElement | null;
@@ -36,9 +37,17 @@ export default class addTodoModal {
     });
   }
 
+  set setTitle(value: string) {
+    this._title = value;
+  }
+
+  set setDescription(value: string) {
+    this._description = value;
+  }
+
   _handleTitle(e: any) {
     // Добавить сюда валидацию
-    this._title = e.target.value;
+    this.setTitle = e.target.value;
   }
 
   initTitleElemListener() {
@@ -49,7 +58,7 @@ export default class addTodoModal {
 
   _handleDescription(e: any) {
     // Добавить сюда валидацию
-    this._description = e.target.value;
+    this.setDescription = e.target.value;
   }
 
   initDescriptionELemListener() {
